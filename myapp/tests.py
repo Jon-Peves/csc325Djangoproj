@@ -13,4 +13,4 @@ class ViewTests(SimpleTestCase):
         response = self.client.get(reverse('about'))
 
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'About Page')
+        self.assertContains(response, 'About Page -v2')
