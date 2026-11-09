@@ -9,23 +9,23 @@ jobs:
   build-test-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Setup - Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Python
+      - name: Setup - Install Python 3.8
         uses: actions/setup-python@v2
         with:
           python-version: '3.8'
 
-      - name: Install dependencies
+      - name: Dependencies - Install packages
         run: |
           python -m pip install django
           pip install -r requirements.txt
 
-      - name: Run tests
+      - name: Test - Run test suite
         run: |
           python manage.py test
 
-      - name: Deploy
+      - name: Deploy - Deploy application
         run: |
           echo "Deploying application..."
