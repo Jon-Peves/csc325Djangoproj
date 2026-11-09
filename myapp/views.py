@@ -7,3 +7,6 @@ def home(request):
 
 def about(request):
     return HttpResponse("About Page")
+
+def settings(request):
+    return HttpResponse("Settings Page")
